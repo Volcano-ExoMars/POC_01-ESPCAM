@@ -202,31 +202,23 @@ Pour rappel, les objectifs étaient les suivants :
 ```
 
 2.   Pouvoir utiliser la PSRAM comme une unité de disque avec un système de fichier afin de lire et sauvegarder des données
-```C
-/*
+```
     - Les fichiers de la page Web sont stockés dans la mémoire de l'ESPCAM par SPIFFS
     - La photo prise est enregistrée comme fichier dans la mémoire de l'ESPCAM par SPIFFS
-*/
 ```
 3. Prendre une photo, la stocker en mémoire non volatile afin de pouvoir la récupérer et éventuellement la transférer sur un serveur
-```C
-/*
+```
     - La prise de photo est effective avec pilotage de la flash Led
     - La photo prise est enregistrée comme fichier dans la mémoire de l'ESPCAM par SPIFFS
-*/
 ```
 4. Communication bidirectionnelle entre un Serveur et le robot en Wifi, par le protocole MQTT
-```css
-/*
+```
     - Publication des données du robot sur le serveur MQTT
     - Abonnement du robot à un topic de contrôle de la LED
-*/
 ```
 5. Héberger une interface WEB asynchrone afin de piloter le robot et visualiser les valeurs des capteurs
-```C
-/*
+```
     - La page Web avec les fichiers html, css et js sont bien stockés et hébergés par le serveur web Asynchrone de l'ESPCAM
-*/
 ```
 
 [Robotic974]:      https://www.facebook.com/robotic974
