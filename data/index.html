@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+<head>
+    <title>ExoMars Command & Telemetry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body class="w3-animate-opacity">
+    <div class="w3-container">
+
+        <div class="w3-row w3-container w3-blue">
+            <h6 class="w3-center">ExoMars Project</h6>
+        </div>
+
+        <div class="w3-row w3-container">
+            <div class="w3-row">
+                <div class="w3-twothird w3-center">
+                    <canvas id="map" style="border:1px solid #ffffff;"></canvas>
+                </div>
+
+                <div class="w3-third w3-center">
+                    <div class="w3-row w3-center w3-padding-small">
+                        <img src="./photo.jpg" id="photo" height="300">
+                    </div>
+                    <div class="w3-row w3-center w3-padding-small">
+                        <button class="w3-col w3-button w3-round w3-purple" onclick="photo()">Photo</button>
+                    </div>
+                    <div class="w3-row w3-padding-small">
+                        <button class="w3-col w3-button w3-round w3-red w3-padding-small" onclick="temperatureButton()">Température: <span id="valeurTemperature">xx</span> °C</button>
+                    </div>
+                    <div class="w3-row w3-padding-small">
+                        <button class="w3-col w3-button w3-round w3-green w3-padding-small" onclick="humidityButton()">Hygrométrie: <span id="valeurHumidity">xx</span> %</button>
+                    </div>
+                    <div class="w3-row w3-padding-small">
+                        <button class="w3-col w3-button w3-round w3-blue w3-padding-small" onclick="gazButton()">Gaz: <span id="valeurGaz">xxx</span> Xc</button>
+                    </div>
+                    <div class="w3-row w3-padding-small">
+                        <button class="w3-col w3-button w3-round w3-orange w3-padding-small" onclick="pressionButton()">Pression: <span id="valeurPression">xxx</span> Hp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-row w3-container">
+            <div class="w3-twothird w3-center">
+                <table style="margin: auto;">
+                    <tr>
+                        <td><button class="w3-button w3-border w3-round-large">RG</button></td>
+                        <td>&nbsp;</td>
+                        <td><button class="w3-button w3-border w3-round-large">RD</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="w3-button w3-border w3-round-large">TG</button></td>
+                        <td><button class="w3-button w3-border w3-round-large">AV</button></td>
+                        <td><button class="w3-button w3-border w3-round-large">TD</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var canvas = document.getElementById('map'),
+        ctx = canvas.getContext('2d'),
+        img = new Image(),
+        sizeMapY = 500,
+        sizeMapX = 800;
+
+    canvas.height = sizeMapY;
+    canvas.width  = sizeMapX;
+    ctx.strokeStyle = '#fff';
+    img.src = './sol_martien.jpg';
+
+    var rover = {img: null, x:700, y:400}
+    rover.img = new Image();
+    rover.img.src = './rover.png';
+
+    img.onload = function () { setInterval(dessineMap, 750) };
+
+function dessineMap() {
+
+    ctx.drawImage(img, 0, 0,sizeMapX, sizeMapY);
+  
+    ctx.beginPath();
+    for (let x=100; x<sizeMapX; x+=100) {
+        ctx.moveTo(x,0);
+        ctx.lineTo(x,sizeMapY);
+    }
+    for (let y=100; y<sizeMapY; y+=100) {
+        ctx.moveTo(0,y);
+        ctx.lineTo(sizeMapX,y);
+    }   ctx.stroke();
+
+    if ( rover.x > 300)
+            rover.x -= 100;
+            else if ( rover.y > 200)
+                rover.y -= 100;
+            else if ( rover.x > 0)
+            rover.x -= 100;
+            else {
+                rover.x = 700;
+                rover.y = 400;
+            }
+                    
+    ctx.drawImage(rover.img, 10+rover.x, 10+rover.y, 80, 80);
+
+}    
+</script>
