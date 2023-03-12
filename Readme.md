@@ -196,10 +196,10 @@ Lors du clic sur un bouton de l'interface Web, une mesure est effectuée par le 
 Pour rappel, les objectifs étaient les suivants :
 
 1.   La carte ne contient pas d'interface USB, il convient donc d'utiliser un programmateur afin de téléverser notre code en mémoire et avoir un retour sur le moniteur Série
-<div style="color: red;">
+<font color='red'>
     - Le code ainsi que le file system sont bien téléversés dans l'ESPCAM
     - Nous avons un retour d'information sur le moniteur Série
-</div>
+</font>
 
 2.   Pouvoir utiliser la PSRAM comme une unité de disque avec un système de fichier afin de lire et sauvegarder des données
 ```C
