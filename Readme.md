@@ -172,28 +172,28 @@ Tous les détails de mise en oeuvre se trouvent ici : [Tommy-Desrochers]
 L'ensemble des `web Handle` se trouve dans le fichier `./include/webHandle.h`
 
 # Description du Résultat
-### Initialisation de l'ESPCAM
+### Initialisation de l'ESPCAM : 
 <p >
     <img src="./assets/Result_POC_img01.png"  width="33%" alt="Exemple Topic">
 </p>
 
-### Page web hebergée sur l'ESPCAM
+### Page web hebergée sur l'ESPCAM : 
 <p >
     <img src="./assets/Result_POC_img02.png"  width="100%" alt="Page Web">
 </p>
 
-### Démonstration
-<p >
-    <img src="./assets/Result_POC_img03.gif"  width="100%" alt="Démonstration">
-</p>
-
+### Démonstration en vidéo :
 - A gauche la page web hébergée par l'ESPCAM
 - A droite les topics du serveur MQTT
 
 Lors du clic sur un bouton de l'interface Web, une mesure est effectuée par le capteur (ici une valeur aléatoire) qui est envoyée sur le serveur MQTT (à droite) et MAJ sur l'interface Web de manière asynchrone (sans rechargement complet de la page).
 
+<p >
+    <img src="./assets/Result_POC_img03.gif"  width="100%" alt="Démonstration">
+</p>
 
-Pour rappel, les objectifs étaient les suivants :
+
+### Validation des Objectifs :
 
 1.   La carte ne contient pas d'interface USB, il convient donc d'utiliser un programmateur afin de téléverser notre code en mémoire et avoir un retour sur le moniteur Série
 ```
