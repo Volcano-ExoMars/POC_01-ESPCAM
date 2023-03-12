@@ -196,7 +196,7 @@ Lors du clic sur un bouton de l'interface Web, une mesure est effectuée par le 
 Pour rappel, les objectifs étaient les suivants :
 
 1.   La carte ne contient pas d'interface USB, il convient donc d'utiliser un programmateur afin de téléverser notre code en mémoire et avoir un retour sur le moniteur Série
-```css
+```
     - Le code ainsi que le file system sont bien téléversés dans l'ESPCAM
     - Nous avons un retour d'information sur le moniteur Série
 ```
